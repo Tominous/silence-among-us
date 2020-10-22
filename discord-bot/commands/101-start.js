@@ -51,9 +51,9 @@ module.exports = new Command({
         // Join the channel, if possible.
         // TODO Move the speaking into the Lobby class.
         if (voiceChannel.joinable && voiceChannel.speakable) {
-            // const voiceConnection = await voiceChannel.join();
-            // voiceConnection.setSpeaking(0);
-            // voiceConnection.play(greeting);
+             const voiceConnection = await voiceChannel.join();
+             voiceConnection.setSpeaking(0);
+             voiceConnection.play(greeting);
         }
         else {
             await message.reply("I can't speak in your channel, but I'll run a lobby for it anyway.");
